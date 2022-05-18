@@ -3,14 +3,15 @@ package jm.task.core.jdbc;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
+import java.sql.SQLException;
+
 public class Main {
 
     static final String DB_URL = "jdbc:mysql://localhost:3306/mydb";
     static final String USER = "root";
     static final String PASS = "1102";
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
         UserService userService = new UserServiceImpl();
         userService.createUsersTable();
         System.out.println("Created db..");
